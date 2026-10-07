@@ -74,9 +74,3 @@ The frontend reads `NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_SOCKET_URL`. The backe
 - `GET /api/health`
 
 Object-storage signed upload endpoints intentionally return a clear configuration error while `STORAGE_PROVIDER=LOCAL`. Implementations can be added behind `StorageProvider` without changing module code. Physical deletion is intentionally deferred to a retention worker; the API soft-deletes metadata immediately.
-
-
-
-
-to alexander.charles@novintix.com
-cc: sathya.selvaraj@novintix.com , roobankumar.r@novintix.com
