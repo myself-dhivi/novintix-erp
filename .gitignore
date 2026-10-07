@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.local
+*.log
+
+frontend/.next/
+**/.next/
+frontend/out/
+frontend/node_modules/
+
+backend/node_modules/
+backend/coverage/
+backend/uploads/
+backend/dist/
+packages/shared/dist/

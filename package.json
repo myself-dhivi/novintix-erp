@@ -1,0 +1,28 @@
+{
+  "name": "novintix-erp",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "packages/shared"
+  ],
+  "scripts": {
+    "dev": "concurrently -n frontend,backend -c cyan,green \"npm run dev -w @novintix/frontend\" \"npm run dev -w @novintix/backend\"",
+    "dev:frontend": "npm run dev -w @novintix/frontend",
+    "dev:backend": "npm run dev -w @novintix/backend",
+    "build": "npm run build -w @novintix/shared && npm run build -w @novintix/backend && npm run build -w @novintix/frontend",
+    "typecheck": "npm run typecheck -w @novintix/shared && npm run typecheck -w @novintix/backend && npm run typecheck -w @novintix/frontend",
+    "start": "concurrently -n frontend,backend -c cyan,green \"npm run start -w @novintix/frontend\" \"npm run start -w @novintix/backend\"",
+    "lint": "npm run lint -w @novintix/frontend",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "db:generate": "npm run prisma:generate -w @novintix/backend",
+    "db:migrate": "npm run prisma:migrate -w @novintix/backend",
+    "db:seed": "npm run prisma:seed -w @novintix/backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "prettier": "^3.9.9"
+  }
+}
